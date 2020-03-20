@@ -28,15 +28,19 @@ public class PlayerController : MonoBehaviour
     {
         float xMovement = Input.GetAxis("Horizontal") * speed;
         rb2d.velocity = new Vector2(xMovement, rb2d.velocity.y);
-        if (xMovement > 0)
+        if (xMovement > 0 && isGrounded != false)
+        {
+            sr.flipX = true;
+            animator.Play("PlayerWalk");
+        }
+        else if (xMovement < 0 && isGrounded != false)
         {
             sr.flipX = false;
             animator.Play("PlayerWalk");
         }
-        else if (xMovement < 0)
+        else if (isGrounded != true)
         {
-            sr.flipX = true;
-            animator.Play("PlayerWalk");
+            animator.Play("PlayerJump");
         }
         else
         {
