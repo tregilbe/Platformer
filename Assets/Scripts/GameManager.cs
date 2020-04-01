@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public int currentScene = 0;
 
+    public int playerScore = 0;
+
     void Awake()
     {
         if (instance == null)
