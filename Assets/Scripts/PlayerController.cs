@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 5.0f;
     public float jumpForce = 10.0f;
+    public float NumOfJumps = 2;
+    public float NumOfJumpsLeft;
     public Transform groundPoint;
     public bool isGrounded = false;
 
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         sr = gameObject.GetComponent<SpriteRenderer>();
         animator = gameObject.GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -51,14 +54,16 @@ public class PlayerController : MonoBehaviour
         if (hitInfo.collider != null)
         {
             isGrounded = true;
+            NumOfJumpsLeft = NumOfJumps;
         }
         else
         {
             isGrounded = false;
         }
         // Jump
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space)&& NumOfJumpsLeft > 0)
             {
+                NumOfJumpsLeft -= 1;
                 rb2d.AddForce(Vector2.up * jumpForce);
             }
     }

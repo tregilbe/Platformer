@@ -641,6 +641,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 450
+  NumOfJumps: 1
+  NumOfJumpsLeft: 0
   groundPoint: {fileID: 1262961333712961409}
   isGrounded: 0
 --- !u!95 &1488636806784328270
