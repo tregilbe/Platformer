@@ -5,8 +5,9 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public AudioSource audioSource;
-    public AudioClip risingTide;
-    public AudioClip hmmm;
+    public AudioClip jump;
+    // public AudioClip risingTide;
+    // public AudioClip hmmm;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,30 +17,37 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            audioSource.clip = risingTide;
-            audioSource.Play();
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            audioSource.clip = hmmm;
-            audioSource.Play();
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            audioSource.Stop();
-        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (audioSource.isPlaying)
-            {
-                audioSource.Pause();
-            }
-            else
-            {
-                audioSource.Play();
-            }
+            audioSource.clip = jump;
+            audioSource.Play();
         }
     }
+
+    // Use for reference
+     // if (Input.GetKeyDown(KeyCode.A))
+        //{
+            // audioSource.clip = risingTide;
+            // audioSource.Play();
+        //}
+        // if (Input.GetKeyDown(KeyCode.S))
+        //{
+            // audioSource.clip = hmmm;
+            // audioSource.Play();
+        //}
+        // if (Input.GetKeyDown(KeyCode.D))
+        //{
+          //  audioSource.Stop();
+        //}
+        // if (Input.GetKeyDown(KeyCode.Space))
+        //{
+             //if (audioSource.isPlaying)
+          //  {
+               // audioSource.Pause();
+            //}
+           // else
+            //{
+               // audioSource.Play();
+            //}
+        //}
 }

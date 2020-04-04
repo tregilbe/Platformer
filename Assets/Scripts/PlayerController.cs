@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10.0f;
     public Transform groundPoint;
     public bool isGrounded = false;
-    
+
     // Start is called before the first frame update
     void Start()
     {

@@ -11,6 +11,11 @@ public class GameManager : MonoBehaviour
 
     public int playerScore = 0;
 
+    public int playerLives = 3;
+
+    // Set up checkpoint system
+    public Vector2 lastCheckPointPos;
+
     void Awake()
     {
         if (instance == null)
@@ -22,6 +27,21 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
             Debug.Log("Warning: A second game manager was detected and destroyed.");
+        }
+    }
+
+    void Update()
+    {
+
+        if (GameManager.instance.playerLives == 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+
+        if (GameManager.instance.playerScore >= 100 && GameManager.instance.playerLives < 3)
+        {
+            GameManager.instance.playerScore -= 100;
+            GameManager.instance.playerLives += 1;
         }
     }
 
@@ -40,6 +60,6 @@ public class GameManager : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene(currentScene + 1);
+        SceneManager.LoadScene(currentScene += 1);
     }
 }

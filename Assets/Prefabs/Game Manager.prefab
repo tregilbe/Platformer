@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5818807025358916473}
   m_Layer: 0
   m_Name: Game Manager
-  m_TagString: Untagged
+  m_TagString: GM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,5 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31017eb7778a557468caa9cbe222554c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level2: {fileID: 0}
   currentScene: 0
   playerScore: 0
+  playerLives: 3
+  lastCheckPointPos: {x: -2.951, y: -1.977}
